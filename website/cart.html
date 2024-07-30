@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEasy - Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="products.html">Products</a>
+                    <div class="dropdown-content">
+                        <a href="product1.html">Gadgets</a>
+                        <a href="product2.html">Dresses</a>
+                        <a href="product3.html">Home Appliances</a>
+                        <a href="product4.html">Foot Wear</a>
+                        <a href="product5.html">Books</a>
+                    </div>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Your Cart</h1>
+        <ul id="cart-items">
+            <!-- Items will be dynamically added here -->
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 ShopEasy. All rights reserved.</p>
+    </footer>
+    <script>
+        function loadCartItems() {
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartList = document.getElementById('cart-items');
+            cartList.innerHTML = '';
+            cartItems.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = item;
+                cartList.appendChild(listItem);
+            });
+        }
+
+        // Load cart items when the page loads
+        window.onload = loadCartItems

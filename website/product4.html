@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEasy - Product 1</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .product-item {
+            flex: 1 1 18%;
+            box-sizing: border-box;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        .product-image {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="products.html">Products</a>
+                    <div class="dropdown-content">
+                        <a href="product1.html">Gadgets</a>
+                        <a href="product2.html">Dresses</a>
+                        <a href="product3.html">Home Appliances</a>
+                        <a href="product4.html">Foot Wear</a>
+                        <a href="product5.html">Books</a>
+                    </div>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Foot Wear</h1>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="/website/images/7.png" alt="Item 1" class="product-image">
+                <h2>Item 1</h2>
+                <p>Price: $10</p>
+                <button onclick="addToCart('Item 1')">Add to Cart</button>
+                <button onclick="location.href='cart.html'">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <img src="/website/images/8.png" alt="Item 2" class="product-image">
+                <h2>Item 2</h2>
+                <p>Price: $20</p>
+                <button onclick="addToCart('Item 2')">Add to Cart</button>
+                <button onclick="location.href='cart.html'">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <img src="/website/images/9.png" alt="Item 3" class="product-image">
+                <h2>Item 3</h2>
+                <p>Price: $30</p>
+                <button onclick="addToCart('Item 3')">Add to Cart</button>
+                <button onclick="location.href='cart.html'">Buy Now</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 ShopEasy. All rights reserved.</p>
+    </footer>
+    <script>
+        function addToCart(item) {
+            alert(item + " has been added to your cart!");
+            // Add functionality to store the item in local storage or a cart array
+        }
+    </script>
+</body>
+</html>
